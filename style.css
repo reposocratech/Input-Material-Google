@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+  margin: 0
+}
+
+body {
+  background-color: darkslategray;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+form {
+  width: 40%;
+  padding-top: 5rem;
+  margin-inline: auto;
+}
+
+input {
+  padding: 0.8rem 1rem;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  background-color: darkslategray;
+  color: white;
+  font-size: 1rem;
+  grid-area: input;
+}
+
+label {
+  display: grid;
+  grid-template-areas: "input";
+  position: relative;
+}
+
+span {
+  grid-area: input;
+  position: absolute;
+  align-self: center;
+  width: max-content;
+  margin-left: 0.8rem;
+  padding-inline: 0.2rem;
+  color: lightgray;
+  background-color: darkslategray;
+  transform-origin: left center;
+  transition: transform 0.3s;
+}
+
+input:focus + span,
+input:not(:placeholder-shown) + span {
+  top: 0;
+  transform: translateY(-50%) translateX(3px) scale(0.8);
+}
+
+input:focus + span {
+  color: cornflowerblue;
+}
+
+input:focus {
+  outline: 1px solid cornflowerblue;
+  outline-offset: -2px;
+  border-color: cornflowerblue;
+}
